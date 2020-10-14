@@ -27,5 +27,5 @@ $ cd NLW-3.0/server
 $ yarn install
 
 # Run
-$ yarn start
+$ yarn dev
 ```
