@@ -2,8 +2,11 @@
 
 ## Orfanatos
 - Rota para listar todos orfanatos;
+Get(/orphanages)
 - Rota para criar um novo orfanato;
+Post(/orphanages)
 - Rota para ver detalhes do orfanato;
+Get(/orphanages/1)
 
 
 ## :information_source: How To Use
