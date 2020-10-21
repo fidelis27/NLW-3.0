@@ -24,6 +24,9 @@ export default {
     const orphanage = await orphanagesRepository.findOneOrFail(id, {
       relations: ['images'],
     });
+    if (!orphanage) {
+      return response.status(401).json({ error: 'User not found' });
+    }
 
     return response.json(orphanageView.render(orphanage));
   },
