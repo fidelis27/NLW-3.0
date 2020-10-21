@@ -19,7 +19,7 @@ export default createGlobalStyle`
     color:#fff;
     background: #ebf2f5;
   }
-  body, input, button {
+  body, input, button, textarea {
     font-size: 18px;
     font-family: 'Nunito', sans-serif;
     font-weight: 600;

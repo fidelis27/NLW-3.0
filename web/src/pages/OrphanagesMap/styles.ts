@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { Popup } from 'react-leaflet';
 
 export const PageMap = styled.div`
   width: 100vw;
@@ -82,7 +83,7 @@ export const CreateOrphanage = styled(Link)`
   &:hover {
     background: #17d6eb;
   }
-  animation: myCreateOrphanage 1.5s linear 0s infinite alternate;
+  /* animation: myCreateOrphanage 1.5s linear 0s infinite alternate;
   @keyframes myCreateOrphanage {
     from {
       transform: rotate(180deg) scale(1.5);
@@ -90,5 +91,39 @@ export const CreateOrphanage = styled(Link)`
     to {
       transform: rotate(0deg);
     }
+  } */
+`;
+
+export const PopUp = styled(Popup)`
+  .leaflet-popup-content-wrapper {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    box-shadow: none;
+  }
+
+  .leaflet-popup-content {
+    color: #0089a5;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 8px 12px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .leaflet-popup-content a {
+    width: 40px;
+    height: 40px;
+    background: #15c3d6;
+    box-shadow: 17.286821365356445px 27.65891456604004px 41.488372802734375px
+      0px #178ea6 16%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .leaflet-popup-tip-container {
+    display: none;
   }
 `;
