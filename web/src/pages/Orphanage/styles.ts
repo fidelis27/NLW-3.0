@@ -3,20 +3,30 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: flex;
   min-height: 100vh;
+
   main {
     flex: 1;
+    padding-left: 100px;
+
+    @media (min-width: 700px) {
+      margin: 100px;
+    }
   }
 `;
 
 export const OrphanageDetails = styled.div`
-  width: 700px;
+  max-width: 700px;
   margin: 64px auto;
   background: #ffffff;
   border: 1px solid #d3e2e5;
   border-radius: 20px;
   overflow: hidden;
+  padding: 34px 40px;
+  @media (min-width: 700px) {
+    padding: 64px 80px;
+  }
   & > img {
-    width: 100%;
+    width: 90%;
     height: 300px;
     object-fit: cover;
   }
@@ -25,8 +35,13 @@ export const OrphanageDetails = styled.div`
 export const Images = styled.div`
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  column-gap: 16px;
-  margin: 16px 40px 0;
+  column-gap: 8px;
+  margin: 8px 20px 0;
+  @media (min-width: 700px) {
+    column-gap: 16px;
+    margin: 16px 40px 0;
+  }
+
   button {
     border: 0;
     height: 88px;
@@ -47,12 +62,20 @@ export const Images = styled.div`
   }
 `;
 export const OrphanageDetailsContent = styled.div`
-  padding: 80px;
+  padding: 40px;
+  @media (min-width: 700px) {
+    padding: 50px;
+  }
+
   h1 {
     color: #4d6f80;
-    font-size: 54px;
-    line-height: 54px;
+    font-size: 34px;
+    line-height: 44px;
     margin-bottom: 8px;
+    @media (min-width: 700px) {
+      font-size: 44px;
+      line-height: 54px;
+    }
   }
   p {
     line-height: 28px;

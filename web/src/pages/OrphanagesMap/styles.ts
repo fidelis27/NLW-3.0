@@ -9,18 +9,30 @@ export const PageMap = styled.div`
   display: flex;
 
   aside {
-    width: 440px;
+    @media (min-width: 700px) {
+      width: 440px;
+      padding: 80px;
+    }
+
+    width: 220px;
     background: linear-gradient(329.54deg, #29b6d1 0%, #00c7c7 100%);
-    padding: 80px;
+    padding: 40px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: flex-start;
   }
   aside h2 {
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 800;
-    line-height: 42px;
+    line-height: 32px;
     margin-top: 64px;
+    @media (min-width: 700px) {
+      font-size: 40px;
+      font-weight: 800;
+      line-height: 42px;
+      margin-top: 64px;
+    }
   }
   aside p {
     line-height: 28px;
@@ -49,17 +61,54 @@ export const PageMap = styled.div`
       }
     }
   }
+  aside button {
+    border: 0;
+    background: linear-gradient(329.54deg, #29b6d1 0%, #00c7c7 100%);
+    display: flex;
+    align-items: center;
+    height: 3.2rem;
+    transition: opacity 0.2s;
+    text-decoration: none;
+    color: #fff;
+    svg {
+      margin-left: 1.6rem;
+    }
+  }
   aside footer strong {
     font-weight: 800;
   }
   .leaflet-container {
     z-index: 5;
   }
-  aside header img {
+`;
+
+export const Header = styled.header`
+  a {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    p {
+      margin-top: 24px;
+    }
+
+    p,
+    span {
+      line-height: 28px;
+
+      font-weight: 700;
+      color: #fff;
+    }
+    span {
+      font-weight: 800;
+      margin-bottom: 5px;
+    }
+  }
+  img {
     animation: myLogo 1.5s linear 0s infinite alternate;
     @keyframes myLogo {
       from {
-        transform: translateX(0px) rotate(360deg) scale(2);
+        transform: translateX(0px) rotate(360deg) scale(1);
       }
       to {
         transform: translateX(180px) rotate(0deg);
@@ -67,6 +116,7 @@ export const PageMap = styled.div`
     }
   }
 `;
+
 export const CreateOrphanage = styled(Link)`
   position: absolute;
   right: 40px;

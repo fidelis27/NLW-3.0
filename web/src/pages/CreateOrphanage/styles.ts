@@ -4,17 +4,25 @@ export const Container = styled.div`
   display: flex;
   main {
     flex: 1;
+    padding-left: 100px;
+
+    @media (min-width: 700px) {
+      margin: 100px;
+    }
   }
 `;
 
 export const CreateOrphanageForm = styled.form`
-  width: 700px;
-  margin: 64px auto;
+  max-width: 700px;
+  margin: 44px auto;
   background: #ffffff;
   border: 1px solid #d3e2e5;
   border-radius: 20px;
-  padding: 64px 80px;
+  padding: 34px 30px;
   overflow: hidden;
+  @media (min-width: 700px) {
+    padding: 64px 80px;
+  }
   .leaflet-container {
     margin-bottom: 40px;
     border: 1px solid #d3e2e5;

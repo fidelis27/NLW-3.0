@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { FiPlus, FiArrowRight } from 'react-icons/fi';
+import { FaSignOutAlt } from 'react-icons/fa';
 import { Map, TileLayer, Marker } from 'react-leaflet';
-
+import { useAuth } from '../../hooks/auth';
 import api from '../../services/api';
 
-import { PageMap, CreateOrphanage, PopUp } from './styles';
+import { PageMap, CreateOrphanage, PopUp, Header } from './styles';
 import mapMarkerImg from '../../images/map-marker.svg';
 
 import mapIcon from '../../utils/mapIcon';
@@ -20,6 +21,14 @@ interface Orphanage {
 const OrphanagesMap: React.FC = () => {
   const [orphanages, setOrphanages] = useState<Orphanage[]>([]);
 
+  const { signOut, user } = useAuth();
+  const history = useHistory();
+
+  function handleSignOut() {
+    signOut();
+    history.push('/');
+  }
+
   useEffect(() => {
     api.get('orphanages').then((response) => {
       setOrphanages(response.data);
@@ -29,17 +38,25 @@ const OrphanagesMap: React.FC = () => {
   return (
     <PageMap>
       <aside>
-        <header>
+        <Header>
+          <Link to="/">
+            <p>Meu Perfil</p>
+            <span>{user?.name}</span>
+          </Link>
           <img src={mapMarkerImg} alt="Happy" />
 
           <h2>Escolha um orfanato no mapa</h2>
           <p>Muitas crianças estão esperando a sua visita :)</p>
-        </header>
+        </Header>
 
         <footer>
           <strong>Taquaritinga</strong>
           <span>São Paulo</span>
         </footer>
+        <button type="button" onClick={handleSignOut}>
+          Sair
+          <FaSignOutAlt size={24} color="#fff" title="sair" />
+        </button>
       </aside>
 
       <Map

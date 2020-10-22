@@ -41,9 +41,14 @@ const Orphanage: React.FC = () => {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
 
   useEffect(() => {
-    api.get(`orphanages/${params.id}`).then((response) => {
-      setOrphanage(response.data);
-    });
+    function loadData() {
+      const token = localStorage.getItem('@happy:token');
+      api.defaults.headers.Authorization = `Bearer ${token}`;
+      api.get(`orphanages/${params.id}`).then((response) => {
+        setOrphanage(response.data);
+      });
+    }
+    loadData();
   }, [params.id]);
 
   if (!orphanage) {

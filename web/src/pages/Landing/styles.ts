@@ -19,13 +19,17 @@ export const ContentWrapper = styled.div`
   max-width: 1100px;
   height: 100%;
   max-height: 580px;
+  margin: 40px;
 
   display: flex;
   align-items: flex-start;
   flex-direction: column;
   justify-content: space-between;
-
   background: url(${landingL}) no-repeat 80% center;
+  background-size: 250px;
+  @media (min-width: 700px) {
+    background-size: 500px;
+  }
 `;
 
 export const Img = styled.img``;
@@ -33,9 +37,15 @@ export const Img = styled.img``;
 export const Main = styled.main`
   max-width: 350px;
   h1 {
-    font-size: 76px;
+    font-size: 56px;
     font-weight: 900;
-    line-height: 70px;
+    line-height: 50px;
+
+    @media (min-width: 700px) {
+      font-size: 76px;
+      font-weight: 900;
+      line-height: 70px;
+    }
   }
 
   p {
