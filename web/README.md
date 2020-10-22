@@ -1,3 +1,15 @@
+# Screens app Web
+
+## Landing
+![01](https://user-images.githubusercontent.com/45233696/96904972-37335080-146e-11eb-88e9-e36566fd0d9d.png)
+## Login
+![02](https://user-images.githubusercontent.com/45233696/96904976-38fd1400-146e-11eb-9c56-9fbd40ec47b8.png)
+## SignUp
+![03](https://user-images.githubusercontent.com/45233696/96904977-38fd1400-146e-11eb-9aa6-ddfbf2a35bd0.png)
+## Map with orphanages
+![04](https://user-images.githubusercontent.com/45233696/96904981-3995aa80-146e-11eb-8ee3-df167c7e2fba.png)
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

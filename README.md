@@ -36,6 +36,9 @@ Application that provides orphanages to be visited.
 The web project was developed using ReactJs with typescript.
 The API that makes the data available was developed using NodeJs with typescript.
 
+## Map with orphanages
+![04](https://user-images.githubusercontent.com/45233696/96904981-3995aa80-146e-11eb-8ee3-df167c7e2fba.png)
+
 
 
 ## :rocket: Technologies
